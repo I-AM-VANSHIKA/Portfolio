@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Your Name">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+                /* Home Section */
+        #home {
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .background-container {
+  background-image: url('C:\Users\varsh\Downloads\giphy.gif'); /* Replace with your GIF's URL */
+  background-size: cover;
+  background-position: center;
+  height: 100%; /* Make the container fill the entire viewport */
+  width: 100%; /* Make the container fill the entire viewport */
+  display: flex; /* Use flexbox for easy content alignment */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+        #home::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+            z-index: 1;
+        }
+
+        .intro {
+            z-index: 2;
+        }
+        .intro p{
+         font-size: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5em;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #name {
+            font-weight: bold;
+            color: space-between;
+        }
+
+        /* Name Animation */
+        @keyframes nameAnimation {
+            0% {
+                color: #6833ff;
+                transform: scale(1.5);
+            }
+            50% {
+                color: deeppink;
+                transform: scale(1.2);
+            }
+            100% {
+                color: red;
+                transform: scale(1.3);
+            }
+        }
+
+        #animated-name {
+            font-size: 5em;
+            animation: nameAnimation 3s infinite alternate;
+        }
+        
+        /* Social Media Links */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-button img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.social-button:hover {
+    background-color: #3498db;
+    transform: scale(1.1);
+}
+
+/* Add hover effect for images */
+.social-button:hover img {
+    filter: brightness(1.2);
+} 
+  
+        /* About Section */
+        #about {
+            padding: 60px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .about-content img {
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: 100px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill:hover {
+            background-color: #555;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .projects-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .proh2{
+          font-size: 3em;
+         }
+        .project {
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-20px);
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .project p {
+            margin-top: 10px;
+        }
+
+        /* Feedback Section */
+        #feedback {
+            background-color: #f1f1f1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        #feedback form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .feedh2{
+              font-size: 3em;
+         }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1em;
+            text-align:left;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 3px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #feedback-response {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Add to existing CSS */
+        /* Animated Name */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        #name {
+            font-weight: bold;
+            color: #3498db;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #3498db;
+            width: 0;
+            animation: typing 4s steps(30) 1s 1 normal both, blinkCaret 0.75s step-end infinite;
+        }
+
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
+            }
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .choice1 {
+            height: 160px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            border-radius: 1rem;
+            flex-direction: column;
+            padding: 1rem;
+            border: 5px solid lightblue;
+            padding: 1rem;
+        }
+        .border-hover {
+            margin: 2rem;
+            text-align: center;
+        }
+        .imgs {
+            height: 80px;
+            width: 80px;
+            object-fit: contain;
+            padding: 5px;
+        }
+        .para {
+            font-size: 1.2rem;
+            color: #201658;
+            text-align: center;
+        }
+        .D h2{
+            font-size: 50px;
+            text-align: center;
+            }
+          .abth2{
+            font-size: 50px;
+            text-align: center;
+            }
+
+       .view-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.view-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+  .footer{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #090124;
+ 
+  display: flex;
+}
+.imgf{
+ border-radius: 45%;
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin-left: 100px;
+  margin-right: auto;
+  float: left;
+
+}
+.con {
+  color: white;
+  margin-left: 100px;
+  margin-right: auto;
+}
+.f{
+  
+  color: white;
+  margin-left: 50px;
+  margin-right: auto;
+}
+.black{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  
+}
+.con1 h2{
+color: white;
+text-align: Center;
+}
+ 
+/* Education Section */
+#education {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#education h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.education-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.education-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #fff;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.education-year {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #3498db;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+.education-details {
+    flex: 1;
+    text-align: left;
+}
+
+.education-details h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.education-details p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+.education-item:hover {
+    transform: translateY(-10px);  /* Lift the card slightly */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Enhance shadow on hover */
+}
+.education-details p:first-child {
+    font-weight: bold;
+    color: #3498db;
+}
+
+    </style>
+    <script>
+        // JavaScript to handle animations and interactions
+
+        // Animated Name
+        document.addEventListener('DOMContentLoaded', () => {
+            const nameElement = document.getElementById('name');
+            nameElement.addEventListener('mouseover', () => {
+                nameElement.style.color = '#e74c3c';
+            });
+            nameElement.addEventListener('mouseout', () => {
+                nameElement.style.color = '#3498db';
+            });
+        });
+
+        // Feedback Form Handling
+        const feedbackForm = document.getElementById('feedback-form');
+        const feedbackResponse = document.getElementById('feedback-response');
+
+        feedbackForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = feedbackForm.name.value;
+            const email = feedbackForm.email.value;
+            const message = feedbackForm.message.value;
+
+            // Simple validation (check if fields are not empty)
+            if (name && email && message) {
+                feedbackResponse.textContent = 'Thank you for your feedback!';
+                feedbackResponse.style.color = 'green';
+            } else {
+                feedbackResponse.textContent = 'Please fill in all the fields.';
+                feedbackResponse.style.color = 'red';
+            }
+
+            // Reset form after submission
+            feedbackForm.reset();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const nameElement = document.getElementById('name');
+            const nameText = '[Your Name]';  // Replace with your name
+
+            // Function to simulate typing effect
+            let index = 0;
+            const typingSpeed = 150;  // Adjust typing speed here
+
+            function typeWriter() {
+                if (index < nameText.length) {
+                    nameElement.textContent += nameText.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, typingSpeed);
+                }
+            }
+
+            typeWriter();
+        });
+  // JavaScript to handle button clicks
+document.querySelectorAll('.view-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+        // Example: Redirect to a project page
+        window.location.href = 'project-details.html';  // Change to your actual project page
+    });
+});
+
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+         <ul>
+            
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="intro"><br>
+            <h1 id="animated-name">Welcome</h1><br><br>
+            <p>I'm <span id="name">Vanshika Gupta.</span>
+            </p>
+            <!-- Your large photo -->
+            <br><br>
+            <img decoding="async" src="C:\Users\varsh\OneDrive\Documents\Pictures\G1.jpg" alt="Your Photo" style="border-radius: 50%; width: 250px; height: 250px; object-fit: cover; margin-top: 20px;"><br><br>
+     
+    <!-- SOCIAL LINK -->
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/its-vanshika-gupta   utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank" class="social-button" id="linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg>            
+            </a>
+            <a href="https://www.instagram.com/your-profile" target="_blank" class="social-button" id="instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+</svg>
+               
+            </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="abth2">About Me</h2>
+        <div class="about-content">
+            <img src="C:\Users\varsh\OneDrive\Documents\Pictures\WhatsApp Image 2025-01-07 at 21.04.31_15e648e3.jpg" alt="Your Photo">
+
+<p> Hi, I'm <strong>Vanshika Gupta</strong>, a passionate and dedicated web developer                                                                       with a strong foundation in modern programming languages and technologies.
+ I specialize in creating dynamic, user-friendly, and innovative web solutions that bring ideas to life.
+
+With expertise in HTML, CSS, JavaScript, C, C++, Java, .NET, Visual Basic, C#, and database management systems, I have a versatile skill set to design and develop seamless web experiences. My goal is to build websites and applications that not only look great but also perform efficiently.
+
+Whether it's developing responsive front-end designs or ensuring robust back-end functionality, I thrive on solving challenges and delivering results that exceed expectations. I am always eager to learn and stay updated with the latest industry trends to keep my work at the cutting edge.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="sk" id="skills">
+<div class="D">
+<h2>SKILLS</h2>
+
+<div class="border-hover">
+  <div class="container">
+   <div class="choice1">
+    <img class="imgs" src="D:\my web\html.png" alt>
+     <p class="para">HTML</p>
+  </div>
+
+  <div class="choice1">
+   <img class="imgs" src="D:\my web\css.png" alt>
+    <p class="para">CSS</p>
+  </div>
+  <div class="choice1">
+  <img class="imgs" src="D:\my web\js.png" alt>
+   <p class="para">JAVA SCRIPT</p>
+  </div>
+ <div class="choice1">
+  <img class="imgs" src="D:\my web\java.png" alt>
+   <p class="para">JAVA</p>
+  </div>
+ <div class="choice1">
+  <img class="imgs" src="D:\my web\sql.png" alt>
+   <p class="para">MY SQL</p>
+ </div>
+ <div class="choice1">
+  <img class="imgs" src="D:\my web\c.png" alt>
+   <p class="para">C LANGUAGE</p>
+ </div>
+ <div class="choice1">
+  <img class="imgs" src="D:\my web\asp.png"  alt>
+   <p class="para">ASP .NET</p>
+ </div>
+</div>
+</div>
+</section>
+
+    <!-- Education -->
+    <!-- Education Section -->
+<section id="education">
+    <h2>Education</h2>
+    <div class="education-timeline">
+        <div class="education-item">
+            <div class="education-year">Currently Pursuing</div>
+            <div class="education-details">
+                <h3>Master's of Computer Application</h3>
+                <p>TEERTHANKER MAHAVEER UNIVERSITY, MORADABAD, UP, INDIA</p>
+                
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="education-year">2021-2024</div>
+            <div class="education-details">
+                <h3>Bachelor's of Computer Application</h3>
+                <p>SIMS, CHANDAUSI, UP, INDIA</p>
+                <p>77.97%</p>
+                
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="education-year">2020-2021</div>
+            <div class="education-details">
+                <h3>INTERMEDIATE</h3>
+                <p>B.D INTER COLLEGE, SAMBHAL, UP, INDIA</p>
+                <p>76.4%</p>
+            
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="education-year">2018-2019</div>
+            <div class="education-details">
+                <h3>HIGH SCHOOL</h3>
+                <p>B.D INTER COLLEGE, SAMBHAL, UP, INDIA</p>
+                <p>78.5%</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="proh2">My Projects</h2><br>
+        <div class="projects-gallery">
+            <div class="project">
+                <img src="C:\Users\varsh\Pictures\Screenshots\Screenshot 2025-03-20 220151.png" alt="Project 1">
+                <p><b>ONLINE TEACHING</b><br> </p><p> A website I built using ASP.NET and C #.</p><br><br>
+<button class="view-btn">View</button>            </div>
+            <div class="project">
+            <img src="C:\Users\varsh\Pictures\Screenshots\Screenshot 2025-03-20 221238.png" alt="Project 2">
+            <p><b>Calculator</b><br> </p><p> A web application built using HTML and CSS , Java Script.</p><br><br>
+<button class="view-btn"><a href="https://anubhav1121.github.io/Calculator/" >View</a></button>
+        </div>
+        
+        </div>
+        
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback">
+        <h2 class="feedh2">Feedback</h2><br>
+        <form id="feedback-form">
+            <div class="form-group">
+                <label for="name"><b>Your Name:</b></label>
+                <input type="text"  name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email"><b>Your Email:</b></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message"><b>Your Feedback:</b></label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="feedback-response"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="footer" >
+<div>
+ <br>
+ <img src="C:\Users\varsh\OneDrive\Documents\Pictures\G1.jpg" alt="Avatar"class="imgf">
+ <br>
+</div>
+ <div class="con">
+ <br><br><br>
+ <h2>CONTACT</h2>
+ <h3> +91 7668626568 </h3><br>
+ <h3> vanshikagupta76686@gmail.com</h3>
+ </div>
+
+ <div class="f">
+ <br><br><br>
+ <h2>Useful Links</h2>
+ <h3><a href="#home">Home</h3>
+ <h3><a href="#about">About</h3>
+ <h3><a href="#skills">Skill</h3>
+ <h3><a href="#education">Education</h3>
+ <h3><a href="#projects">Project</h3>
+ </div>
+
+</section > 
+<footer class="black">
+<div class="con1"><br>
+<h2>@2025 www.Vanshikagupta.in . All Rigths Reserved.</h2></div>
+</footer> 
+
+    <script src="scripts.js"></script>
+</body>
+</html>
